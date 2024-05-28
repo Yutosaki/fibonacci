@@ -22,6 +22,7 @@ func fibonacci(n int) *big.Int {
 	}
 }
 
+//TODO message名をわかりやすくする
 func fibHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		writeErrorResponse(w, http.StatusMethodNotAllowed, "bad request")
@@ -62,6 +63,7 @@ func fibHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonResponse)
 }
 
+//TODO 最後とそれぞれのメッセージごとに改行を入れる
 func writeErrorResponse(w http.ResponseWriter, statusCode int, message string) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(statusCode)
