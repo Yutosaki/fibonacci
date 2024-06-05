@@ -10,7 +10,9 @@ import (
 )
 
 func fibonacci(n int) *big.Int {
-	if n == 1 || n == 2 {
+	if n == 0 {
+		return big.NewInt(0)
+	} else if n == 1 || n == 2 {
 		return big.NewInt(1)
 	} else {
 		a := big.NewInt(1)
