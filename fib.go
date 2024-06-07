@@ -80,8 +80,8 @@ func writeErrorResponse(w http.ResponseWriter, statusCode int, message string) {
 
 func main() {
 	http.HandleFunc("/fib", fibHandler)
-	fmt.Println("Server is listening on https://localhost:443/fib...")
-	err := http.ListenAndServeTLS(":443", "localhost.pem", "localhost-key.pem", nil)
+	fmt.Println("Server is listening on https://localhost:8443/fib...")
+	err := http.ListenAndServeTLS(":8443", "localhost.pem", "localhost-key.pem", nil)
 	if err != nil {
 		log.Fatal("Listen and Serve:", err)
 	}
